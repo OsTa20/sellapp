@@ -1,0 +1,149 @@
+<html>
+  <head>     
+    <meta charset="UTF-8">     
+    <meta name="viewport" content="width=devic-width,initial-scale=1.0">
+    <link rel="stylesheet" href="css/1_style.css">
+    <title>index-singin</title>   
+  </head>    
+  <body>      
+    <div id="logodiv">
+      <!--     app-start     -->
+      <img id="logoimg" src="img/1_logo.png" alt="app-logo">
+      <span style="color:blue">T</span>
+      <span style="color:red">a</span>
+      <span style="color:green">k</span>
+      <span style="color:#1387d4">w</span>
+      <span style="color:red">a</span>
+      <span>-</span>
+      <span>S</span>
+      <span>e</span>
+      <span>l</span>
+      <span>l</span>
+      <p>you are welcome ^-^</p>
+    </div>
+    <div id="singindiv">
+      <!--     singin      -->
+      <span class="span" style="color:blue">T</span>
+      <span class="span" style="color:red">a</span>
+      <span class="span" style="color:green">k</span>
+      <span class="span" style="color:#1387d4">w</span>
+      <span class="span" style="color:red">a</span>
+      <span>-</span>
+      <span>S</span>
+      <span>e</span>
+      <span>l</span>
+      <span>l</span>
+      <br>
+      <img src="img/2_person.png">
+      <form action="php/singin.php" method="post">
+        <input id="username" name="name" type="text" placeholder="اسم المستخدم" required>
+        <div>
+          <input id="userpass" name="password" type="password" placeholder="كلمة المرور" required>
+          <p id="showpass"></p>
+        </div>
+        <input id="userphon" name="phone" type="tel" minlength="1" maxlength="1" placeholder="الهاتف" required>
+        <br>
+        <input class="se_or_by" id="buyer" name="se_or_by" type="radio" value="buyer" checked required>
+        <label for="buyer">مشتري</label>      
+        <p id="hasm" style="display:inline-block;border:2px solid white;margin: 0 8px;padding: 5px;color:blue">التسجيل بحساب بائع</p>
+        <br>
+        <label id="ws_la">مهتم بشراء</label>
+        <select id="usersel" class="select" name="which_sell[]" required>
+          <option value="" selected></option>
+          <option value="clothes">ملابس</option>
+          <option value="electresty">أدوات_كهربائية</option>
+          <option value="electrons">أدوات_الكترونية</option>
+          <option value="resturant">مطاعم</option>
+          <option value="other">غير_ذلك</option>
+        </select>
+        <br><hr><br>
+        <p id="createac">إنشاء حساب</p>
+        <input id="createacin" style="display:none" type="submit" value="إنشاء حساب">
+      </form>
+      <p>لدي حساب بالفعل »» <span class="login">تسجيل الدخول</span></p>
+    </div>
+    <div id="logindiv">
+      <!--     logindiv      -->
+      <span class="span" style="color:blue">T</span>
+      <span class="span" style="color:red">a</span>
+      <span class="span" style="color:green">k</span>
+      <span class="span" style="color:#1387d4">w</span>
+      <span class="span" style="color:red">a</span>
+      <span>-</span>
+      <span>S</span>
+      <span>e</span>
+      <span>l</span>
+      <span>l</span>
+      <br>
+      <img src="img/2_person.png">
+      <form action="php/login.php" method="post">
+        <input name="name" type="text" placeholder="اسم المستخدم" required>
+        <input id="userphon" name="phone" type="tel" minlength="1" maxlength="10" placeholder="الهاتف" required>
+        <br>
+        <div>
+          <input id="luserpass" name="password" type="password" placeholder="كلمة المرور" required>
+          <p id="lshowpass"></p>
+        </div>
+        <br><hr><br>
+        <p id="loginp">تسجيل دخول</p>
+        <input id="loginin" style="display:none" type="submit" value="إنشاء حساب">
+      </form>
+      <br>
+      <p>ليس لدي حساب »» <span class="login">إنشاء حساب</span></p>
+    </div>
+    <div id="hasmarkdiv">
+      <!--       has market singin    -->
+      <span class="span" style="color:blue">T</span>
+      <span class="span" style="color:red">a</span>
+      <span class="span" style="color:green">k</span>
+      <span class="span" style="color:#1387d4">w</span>
+      <span class="span" style="color:red">a</span>
+      <span>-</span>
+      <span>S</span>
+      <span>e</span>
+      <span>l</span>
+      <span>l</span>
+      <br>
+      <p style="color:blue;border:2px solid blue">حساب بائع</p>
+      <div id="profildiv">
+        <img src="img/2_person.png">
+        <p>صورة الغلاف</p>
+        <button>+</button>
+      </div>
+      <form enctype="multipart/form-data" action="php/hasmark.php" method="post">
+        <input name="mar_name" type="text" placeholder="اسم المتجر" required>
+        <input name="mar_locat" type="text" placeholder="موقع المتجر" required> 
+        <input id="userphon2" name="phone" type="tel" placeholder="الهاتف" required>
+        <div>
+          <input id="userpass2" name="password" type="password" placeholder="كلمة المرور" required>
+          <p id="hshowpass"></p>
+        </div>
+        <input class="nodis se_or_by" id="buyer" name="se_or_by" type="radio" value="buyer" checked required>
+        <label class="nodis" for="buyer">مشتري</label>
+        <br>
+        <label>مهتم ببيع</label>
+        <select id="usersel2" class="select" name="which_sell[]" required>
+          <option value="" selected></option>
+          <option value="clothes">ملابس</option>
+          <option value="electresty">أدوات_كهربائية</option>
+          <option value="electrons">أدوات_الكترونية</option>
+          <option value="resturant">مطاعم</option>
+          <option value="other">غير_ذلك</option>
+        </select>
+        <br>
+        <label class="nodis">تحميل أيقونة للمتجر</label>
+        <input class="nodis" id="imageFile" name="mar_icon" type="file" accept="image/*" required>
+        <br><hr><br>
+        <p id="createac2">إنشاء حساب</p>
+        <input id="createacin2" style="display:none" type="submit" value="إنشاء حساب">
+      </form>
+      <span class="login">عودة لتسجيل الدخول</span>
+    </div>
+    
+    <div id="noacc_of">
+      <p>تأكد من اتصالك بالانترنت</p>
+      <img src="img/12_nowifi.png" height="200" width="200" style="margin-top:20px">
+    </div>
+  </body> 
+  <script src="../js/1_index.js"></script> 
+</html> 
