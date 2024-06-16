@@ -107,7 +107,7 @@ createac.onclick = function(){
       if((username.value != '') && (userpass.value != '') && (userphon.value.length == 1)){  
         //edit
         username.value = username.value.replaceAll(" ",'_');
-        if(window.navigator.onLine == false){  ///////////......edit
+        if(window.navigator.onLine == true){  ///////////......edit
           createacin.click();
         }
         else {
@@ -125,7 +125,7 @@ loginp.onclick = function(){
 }
 createac2.onclick = function(){
   if(imageFile.value != ''){
-    if(window.navigator.onLine == false){  ///////////......edit
+    if(window.navigator.onLine == true){  ///////////......edit
       createacin2.click();
     }
     else {
