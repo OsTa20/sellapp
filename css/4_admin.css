@@ -1,0 +1,27 @@
+.container div {
+  display: inline-block;
+  width: 150px;
+  height: 90px;
+  overflow: hidden;
+}
+.container div p {
+  display: inline-block;
+}
+.clos_web div {
+  height: 50px;
+  width: 140px;
+  display: inline-block;
+  position: relative;
+  padding: 0;
+  line-height: 50px;
+}
+.clos_web div #on_off_web {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 75px;
+  height: 50px;
+  margin: 0;
+  background-color: blue;
+  color: white;
+}

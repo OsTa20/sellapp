@@ -1,0 +1,67 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+header {
+  padding: 20px;
+  background-color: #4dbfffad;
+  border-radius: 0;
+}
+header .span {
+  font-size: 25px;
+  font-weight: bold;
+}
+.container {
+  width: 350px;
+  padding: 15px;
+  margin: 10px auto;
+  background-color: #4dbfffad;
+  text-align: center;
+  color: brown;
+}
+#addaccount {
+  border: 2px solid blue;
+  color: blue;
+  margin: 10px;
+  display: inline-block;
+  padding: 5px;
+}
+#addaccount:hover {
+  background-color: white;
+}
+.container > div {
+  background-color: white;
+  margin: 10px auto;
+  text-align: right;
+  direction: rtl;
+  padding: 10px;
+  position: relative;
+}
+.userimg {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin: 10px;
+  display: inline-block;
+  border: 1px solid blue;
+}
+.container div div {
+  max-width: 200px;
+  overflow: hidden;
+  display: inline-block;
+  transform: translate(0,-10px);
+}
+.accsitting {
+  position: absolute;
+  left: 5px;
+  top: 5px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid blue;
+  background-image: url('../img/5_setting.png');
+  background-repeat: no-repeat;
+  background-size: 90% 90%;
+  background-position: 50% 50%;
+}

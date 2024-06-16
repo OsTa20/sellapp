@@ -1,0 +1,342 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  border-radius: 10px;
+  z-index: 3;
+}
+body {
+  padding-bottom: 100px;
+  position: relative;
+}
+header {
+  padding: 20px;
+  background-color: #4dbfff;
+  border-radius: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 5;
+}
+header .span {
+  font-size: 25px;
+  font-weight: bold;
+}
+header button {
+  width: 50px;
+  height: 50px;
+  background: none;
+  color: white;
+  border-color: white;
+  font-size: 20px;
+}
+#menu {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  transform: rotate(90deg);
+}
+#search {
+  position: absolute;
+  right: 70px;
+  top: 15px;
+  background-image: url('../../img/10_search.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+}
+#blackdiv {
+  position: fixed;
+  left: 0;
+  top: 70px;
+  width: 100%;
+  height: calc(100% - 70px);
+  background-color: black;
+  opacity: .8;
+  z-index: 4;
+  border-radius: 0;
+  display: none;
+}
+#menudiv {
+  position: fixed;
+  right: -100%;
+  top: 70px;
+  width: 70%;
+  height: calc(100% - 80px);
+  background-color: white;
+  z-index: 6;
+  text-align: center;
+  overflow: auto;
+  padding: 5px 0 15px;
+  transition: all .8s linear;
+  -webkit-transition: all .8s linear;
+}
+#menudiv a {
+  display: block;
+  margin: 5px auto;
+  padding: 10px;
+  width: 200px;
+  color: #4dbfff;
+  text-decoration: none;
+  border: 2px solid #4dbfff;
+}
+#myaccount {
+  border: 2px solid #4dbfff;
+  padding: 5px 10px 10px;
+}
+#myaccount img {
+  width: 150px;
+  height: 150px;
+  margin: 10px;
+}
+#myaccount a {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+  width: 50px;
+  height: 50px;
+  background-image: url('../../img/5_setting.png');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 70% 70%;
+}
+#menudiv .social {
+  display: inline-block;
+  width: 50px;
+  margin: 5px;
+}
+#menudiv .active {
+  background-color: blue;
+  color: white;
+}
+nav {
+  background-color: #4dbfffaa;
+  height: 50px;
+  overflow: hidden;
+  border-radius: 0;
+  color: white;
+  border: 2px solid white;
+  position: relative;
+  top: 73px;
+}
+nav a {
+  display: inline-block;
+  height: 50px;
+  padding: 0 10px;
+  width: 24%;
+  text-align: center;
+  text-decoration: none;
+  color: #151c92fa;
+  border-radius: 0;
+  position: relative;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+}
+nav a:after {
+  content: '|';
+  position: absolute;
+  right: 0;
+  top: 10px;
+  color: white;
+}
+nav .active {
+  background-color: #efeff0;
+  color: white;
+}
+nav .home {
+  background-image: url('../../img/6_home.svg');
+}
+nav .notif {
+  background-image: url('../../img/7_notif.svg');
+}
+nav .mark {
+  background-image: url('../../img/8_mark.svg');
+}
+nav .myrepo {
+  background-image: url('../../img/9_repo.svg');
+}
+nav .myrepo:after {
+  content: '';
+}
+.container, .nomoreg, #kmya_div {
+  position: relative;
+  top: 70px;
+  width: 95%;
+  padding: 10px;
+  margin: 10px auto;
+  background-color: #4dbfffad;
+  text-align: center;
+  color: brown;
+}
+#kmya_div {
+  background-color: white;
+  z-index: 5;
+  width: 300px;
+  margin: 0 auto;
+  position: fixed;
+  top: 100px;
+  left: calc((100% - 300px)/2);
+  padding: 30px 10px;
+  direction: rtl;
+  display: none;
+}
+#kmya_div div {
+  display: inline-block;
+  border: 1px solid blue;
+  width: 150px;
+  height: 40px;
+  overflow: hidden;
+}
+#kmya_div p {
+  display: inline-block;
+}
+#kmya_div div button, #kmya_div div input {
+  width: 30px;
+  height: 30px;
+  line-height: 20px;
+  padding: 5px;
+}
+#kmya_div div button {
+  background-color: #42baf9;
+  font-size: 20px;
+}
+#kmya_div button {
+  padding: 10px;
+  color: white;
+  margin: 5px;
+  font-size: 15px;
+}
+.nomoreg {
+  margin-bottom: 50px;
+}
+.nomoreg #update{
+  border: 2px solid brown;
+  padding: 10px;
+  width: 100px;
+  margin: 0 auto;
+}
+.nomoreg #update:hover {
+  background-color: blue;
+  color: white;
+}
+.container div {
+  display: inline-block;
+  background-color: white;
+  width: 150px;
+  height: 300px;
+  overflow: hidden;
+  margin: 5px;
+  padding: 5px;
+  direction: rtl;
+}
+.container div .buying {
+  width: 40px;
+  height: 40px;
+  background-image: url('../../img/11_box.svg');
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-color: blue;
+}
+.container div .details {
+  font-size: 10px;
+}
+.glodimg {
+  width: 120px;
+  height: 120px;
+  margin: 2px auto 5px;
+  border: 2px solid black;
+}
+.container div div {
+  width: 130px;
+  height: 35px;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  border: 1px solid brown;
+}
+.container div .pr_an_sh {
+  border: none;
+  display: flex;
+  align-items: center;
+  align-content: center;
+}
+.buylog {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 2px solid black;
+  display: inline-block;
+  position: absolute;
+  right: 5px;
+  top: 2px;
+}
+.buyname {
+  display: inline-block;
+  position: absolute;
+  top: 8px;
+  right: 40px;
+}
+.container div h5 {
+  padding: 5px;
+  border: 2px solid blue;
+  display: inline-block;
+  margin: 5px;
+}
+
+footer {
+  width: 100%;
+  margin: 0;
+  height: 50px;
+  position: fixed;
+  bottom: 0;
+  background-color: #078fd7;
+  text-align: center;
+}
+
+footer p {
+  display: inline-block;
+  width: 29%;
+  margin: 0 1.3%;
+  color: white;
+  line-height: 50px;
+  border-radius: 0;
+}
+footer #al_sla {
+  background-image: url('../img/11_box.svg');
+  background-repeat: no-repeat;
+  background-position: 0 50%;
+  background-size: 30%;
+}
+footer .active {
+  background-color: blue;
+}
+
+/*
+#al_sla_div {
+  background-color: white;
+  width: 100%;
+  height: 300px;
+  position: fixed;
+  bottom: 0;
+  margin: 0;
+  padding: 10px;
+}
+#al_sla_div div {
+  height: 100px;
+  background-color: #078fd7;
+  padding: 5px;
+  margin: 5px auto;
+  direction: rtl;
+}
+#al_sla_div div p {
+  border: .5px solid blue;
+  margin: 1px;
+  padding: 5px;
+  display: inline-block;
+  width: 60px;
+  font-size: 10px;
+}
+*/

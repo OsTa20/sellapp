@@ -1,0 +1,84 @@
+<?php
+  session_start();
+  $name = $_SESSION['name'];
+  $phone = $_SESSION['phone'];
+  $user = $name . $phone;
+  
+  $pro = $_GET['pro'];
+  $qu = $_GET['qu'];
+  $bu_l = $_GET['bu_l'];
+  date_default_timezone_set("Asia/Damascus");
+  $dd = date('d-m-Y');
+  $hh = date('h:i');
+  
+  $pro = substr($pro,3);
+  $pname = basename($pro);
+  $sel = dirname(dirname($pro));
+
+  $pd = explode('.',$pname);
+  $pdata = $pd[0] . '.text';
+  $prdir = dirname($pro) . '/' .$pdata;
+  
+  $pr_da = explode(' : ' ,file_get_contents($prdir));
+  $pr_n = explode("\n",$pr_da[1]);
+  $pr_n = $pr_n[0];
+  $pr_p = explode("\n",$pr_da[2]);
+  $pr_p= $pr_p[0];
+  
+  $usd = '../users/buyer/'.$user;
+  if(is_dir($usd)){
+    // buyer
+    $myb = $usd . '/mybuys_tem';
+    if(is_dir($myb)){
+      //copy($pro,$myb.'/'.$pname);
+      copy($prdir,$myb.'/'.$pdata);
+      $pd_c = file_get_contents($myb.'/'.$pdata);
+      file_put_contents($myb.'/'.$pdata , $pd_c."\nprod_q : ".$qu."\nseller : ".$sel. "\npr_dir : " .$pro. "\ndate : " . $dd .' '. $hh );
+    }
+    else {
+      mkdir($myb);
+      //copy($pro,$myb.'/'.$pname);
+      copy($prdir,$myb.'/'.$pdata);
+      $pd_c = file_get_contents($myb.'/'.$pdata);
+      file_put_contents($myb.'/'.$pdata,$pd_c."\nprod_q : ".$qu."\nseller : ".$sel. "\npr_dir : " .$pro. "\ndate : " . $dd .' '. $hh );
+    }
+  }
+  else {
+    // seller
+    $usd = '../users/seller/'.$user;
+    $myb = $usd . '/mybuys_tem';
+    if(is_dir($myb)){
+      //copy($pro,$myb.'/'.$pname);
+      copy($prdir,$myb.'/'.$pdata);
+      $pd_c = file_get_contents($myb.'/'.$pdata);
+      file_put_contents($myb.'/'.$pdata,$pd_c."\nprod_q : ".$qu."\nseller : ".$sel. "\npr_dir : " .$pro. "\ndate : " . $dd .' '. $hh );
+    }
+    else {
+      mkdir($myb);
+      //copy($pro,$myb.'/'.$pname);
+      copy($prdir,$myb.'/'.$pdata);
+      $pd_c = file_get_contents($myb.'/'.$pdata);
+      file_put_contents($myb.'/'.$pdata,$pd_c."\nprod_q : ".$qu."\nseller : ".$sel. "\npr_dir : " .$pro. "\ndate : " . $dd .' '. $hh );
+    }
+  }
+  
+  if(file_exists($sel.'/push_noti.text')){
+    $n_ts = file_get_contents($sel.'/push_noti.text');
+    $nd = $n_ts . "buyer : " . $user . "\npr_name : " . $pr_n. "\npr_priz : " . $pr_p . "\npr_coun : " . $qu . "\nbu_l : " . $bu_l . "\npr_dir : " . $pro ."\ndate : " . $dd .' '. $hh  ."\n***\n"; 
+    file_put_contents($sel.'/push_noti.text', $nd);
+  }
+  else {
+    $nd = $n_ts . "buyer : " . $user . "\npr_name : " . $pr_n. "\npr_priz : " . $pr_p . "\npr_coun : " . $qu . "\nbu_l : " . $bu_l . "\npr_dir : " .$pro. "\ndate : " . $dd .' '. $hh  . "\n***\n"; 
+    file_put_contents($sel.'/push_noti.text', $nd);
+  }
+  $not = $sel.'/notification.text';
+  if(file_exists($not)){
+    $not_d = file_get_contents($not);
+    $not_d++;
+    file_put_contents($not,$not_d);
+  }
+  else {
+    file_put_contents($not,1);
+  }
+  echo "<script>alert('تم إرسال طلبك يرجى انتظار تأكيد البيع');window.history.back();</script>";
+?>
