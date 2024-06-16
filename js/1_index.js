@@ -32,7 +32,7 @@ let time_tosin = setTimeout(function(){
   if (localStorage.singin == undefined){
      //window.open('http://0.0.0.0:8080/html/privite/mainpage_s.php');
          //// edit
-    if(window.navigator.onLine == false){  ////////... edit
+    if(window.navigator.onLine == true){  ////////... edit
       singindiv.style = "display:block";
     }
     else {
